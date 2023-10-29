@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Rating from "@material-ui/lab/Rating";
 import { useStateValue } from "../StateProvider";
-function Card({ image, title, price, rating }) {
+function Card({ id, image, title, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
   console.log("basket >>>>", basket);
   const addToBasket = (e) => {
@@ -11,6 +11,7 @@ function Card({ image, title, price, rating }) {
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
+        id,
         title,
         price,
         image,
