@@ -1,21 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useStateValue } from "../StateProvider";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  /*const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const navigate = useNavigate();
-
-  const signOut = () => {
-    dispatch({
-      type: "SET_USER",
-      user: null,
-    });
-
-    localStorage.removeItem("user");
-    navigate("/");
-  };*/
   return (
     <Container>
       <Inner>
@@ -37,12 +27,12 @@ function Navbar() {
             <p>Return</p>
             <p>& Orders</p>
           </NavButton>
-          <BasketButton>
+          <BasketButton onClick={() => navigate("/checkout")}>
             <img
               src="https://www.freeiconspng.com/uploads/cart-icon-10.png"
               alt=""
             />
-            <p>0</p>
+            <p>{basket?.length}</p>
           </BasketButton>
         </RightContainer>
       </Inner>

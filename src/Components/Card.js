@@ -1,25 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 import Rating from "@material-ui/lab/Rating";
-function Card() {
+import { useStateValue } from "../StateProvider";
+function Card({ image, title, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+  console.log("basket >>>>", basket);
+  const addToBasket = (e) => {
+    e.preventDefault();
+
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        title,
+        price,
+        image,
+        rating,
+      },
+    });
+  };
+
   return (
     <Container>
       <Image>
-        <img
-          src="https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
-          alt=""
-        />
+        <img src={image} alt="" />
       </Image>
       <Description>
-        <h3>Dumbbell, fitness and bodybuilder black man with workout</h3>
+        <h5>{title}</h5>
         <Rating
           name="half-rating-read"
-          defaultValue={2.5}
+          defaultValue={rating}
           precision={0.5}
           readOnly
         />
-        <p>₦ 3,000</p>
-        <button /*onClick={addToBasket}*/>Add to Cart</button>
+        <p>₦ {price}</p>
+        <button onClick={addToBasket}>Add to Cart</button>
       </Description>
     </Container>
   );

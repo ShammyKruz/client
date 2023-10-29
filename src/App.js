@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
+import Checkout from "./Components/Checkout";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/login" element={<Login />} />
-          <Route path="/checkout" element={<h1>Checkout</h1>} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/address" element={<h1>Address</h1>} />
           <Route path="/addproduct" element={<h1>AddProduct</h1>} />

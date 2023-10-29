@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Navbar from "./Navbar";
 
 function Home() {
-  const [products, setProducts] = useState("");
-
-  /*useEffect(() => {
-    const fetchdata = async () => {
-      const data = await axios.get("/products/get");
-      setProducts(data);
-    };
-    fetchdata();
-  }, []);*/
-
   return (
     <Container>
       <Navbar />
@@ -22,12 +12,54 @@ function Home() {
         <img src="./banner.jpg" alt="" />
       </Banner>
       <Main>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
+        <Card
+          image={
+            "https://media.istockphoto.com/id/1449353449/photo/dumbbell-fitness-and-bodybuilder-black-man-with-workout-training-in-gym-or-garage-studio-for.webp?b=1&s=170667a&w=0&k=20&c=lue0I_Eba1LcsUcfQ-rLr0EUWvixQhP122jLeutT-XU="
+          }
+          price={2500}
+          rating={3}
+          title={"Dumbells"}
+        />
       </Main>
     </Container>
   );
